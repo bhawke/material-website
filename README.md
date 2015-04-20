@@ -27,6 +27,10 @@ To Deploy to production
     git push appengine master
 ```
 
+Continuous Integration
+----------------
+https://travis-ci.org/
+
 URL
 ----------------
 http://www.blackhawkenterprise.com
