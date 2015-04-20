@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/layout/layout.html">
+  <link rel="import" href="../bower_components/layout/shadow-layout.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/core-icons/core-icons.html">
+  <link rel="import" href="../bower_components/core-image/core-image.html">
+  <link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+  <link rel="import" href="./elements/card-blocks.html">
+
+  <style>
+
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 20;
+      color: #212121;
+      background-color: #edecec;
+    }
+
+    html, body {
+      font-family: 'robotoregular', sans-serif;
+      font-size: 13px;
+      font-weight:300;
+
+    }
+
+    .main {
+      width: 350px;
+    }
+
+  </style>
+  <link rel="stylesheet" href="styles/roboto.css">
+</head>
+<body>
+
+
+
+<div class="layout horizontal">
+  <div class="main layout vertical">
+
+    <h3>Supporting Text Block</h3>
+    <supporting-text>
+      I'm a thing.  But, like most politicians, he promised more than
+      he could deliver.  You won't have time for sleeping, soldier,
+      not with all the bed making you'll be doing. Then we'll go with that
+      data file! Hey, you add a one and two zeros to that or we walk!
+      You're going to do his laundry? I've got to find a way to escape.
+    </supporting-text>
+
+    <h3>Supporting Text Block - Last</h3>
+    <!-- note: the bottom padding needs to be 24px vs 16px per material design spec -->
+    <supporting-text style="padding-bottom:24px;">
+      I'm a thing.  But, like most politicians, he promised more than
+      he could deliver.  You won't have time for sleeping, soldier,
+      not with all the bed making you'll be doing. Then we'll go with that
+      data file! Hey, you add a one and two zeros to that or we walk!
+      You're going to do his laundry? I've got to find a way to escape.
+    </supporting-text>
+
+    <h3>Primary Title Block</h3>
+    <primary-title>
+      <span class="title">Title goes here</span>
+      <span class="subtitle">Subtitle here</span>
+    </primary-title>
+
+    <h3>Action Block</h3>
+    <action-block>
+      <paper-button>Action 1</paper-button>
+      <paper-button>Action 2</paper-button>
+      <div class="flex"></div>
+      <paper-icon-button icon="more-vert"></paper-icon-button>
+    </action-block>
+
+    <h3>Media Block</h3>
+    <media-block>
+      <core-image style="width:100%;min-height:200px;" sizing="cover" src="../data/showcase_1.png"></core-image>
+    </media-block>
+
+  </div>
+
+  <div class="main layout vertical" style="padding-left:50px;">
+
+    <h3>Blocks Assembled on Paper card</h3>
+    <paper-card elevation="1">
+      <media-block>
+        <core-image style="width:100%;min-height:200px;" sizing="cover" src="../data/showcase_1.png"></core-image>
+      </media-block>
+      <primary-title>
+        <span class="title">Title goes here</span>
+        <span class="subtitle">Subtitle here</span>
+      </primary-title>
+      <action-block>
+        <paper-button>Action 1</paper-button>
+        <paper-button>Action 2</paper-button>
+        <div class="flex"></div>
+        <paper-icon-button icon="more-vert"></paper-icon-button>
+      </action-block>
+      <supporting-text style="padding-bottom:24px;">
+        I'm a thing.  But, like most politicians, he promised more than
+        he could deliver.  You won't have time for sleeping, soldier,
+        not with all the bed making you'll be doing. Then we'll go with that
+        data file! Hey, you add a one and two zeros to that or we walk!
+        You're going to do his laundry? I've got to find a way to escape.
+      </supporting-text>
+    </paper-card>
+
+    <h3>Card 2</h3>
+    <paper-card elevation="1">
+      <media-block>
+        <core-image style="width:100%;min-height:200px;" sizing="cover" src="../data/showcase_13.png"></core-image>
+      </media-block>
+      <primary-title>
+        <span class="title">Phone timer timing</span>
+        <span class="subtitle">Yo Yo Dog</span>
+      </primary-title>
+      <action-block>
+        <paper-button>Sit</paper-button>
+        <paper-button>Stay</paper-button>
+        <div class="flex"></div>
+        <paper-icon-button icon="more-vert"></paper-icon-button>
+      </action-block>
+    </paper-card>
+
+    <h3>Card 3</h3>
+    <paper-card elevation="1">
+      <primary-title>
+        <span class="title">Phone timer timing</span>
+        <span class="subtitle">Yo Yo Dog</span>
+      </primary-title>
+      <supporting-text>
+        I'm a thing.  But, like most politicians, he promised more than
+        he could deliver.  You won't have time for sleeping, soldier,
+        not with all the bed making you'll be doing. Then we'll go with that
+        data file! Hey, you add a one and two zeros to that or we walk!
+        You're going to do his laundry? I've got to find a way to escape.
+      </supporting-text>
+      <action-block>
+        <paper-button>Sit</paper-button>
+        <paper-button>Stay</paper-button>
+        <div class="flex"></div>
+        <paper-icon-button icon="more-vert"></paper-icon-button>
+      </action-block>
+    </paper-card>
+
+    <h3>Card 4</h3>
+    <paper-card elevation="1">
+      <media-block>
+        <core-image style="width:100%;min-height:200px;" sizing="cover" src="../data/showcase_14.png"></core-image>
+      </media-block>
+      <action-block>
+        <div class="flex"></div>
+        <paper-icon-button icon="grade"></paper-icon-button>
+        <paper-icon-button icon="favorite-outline"></paper-icon-button>
+        <paper-icon-button icon="visibility"></paper-icon-button>
+      </action-block>
+    </paper-card>
+
+  </div>
+</div>
+
+
+</body>
+</html>

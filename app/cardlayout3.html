@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/layout/layout.html">
+  <link rel="import" href="../bower_components/layout/shadow-layout.html">
+
+  <style>
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #212121;
+      background-color: #edecec;
+    }
+  </style>
+</head>
+<body>
+
+<dom-module id="my-app">
+  <style>
+    .card-container {
+      width:1160px;
+      margin-top:30px;
+    }
+    .card {
+      width: calc(100% / 4);
+      height: 321px;
+    }
+    .card:nth-child(1){
+      width: calc(100% / 2);
+      height: 558px;
+    }
+    .card:nth-child(2){
+      width: calc(100% / 2);
+      height: 558px;
+    }
+    .card:nth-child(3){
+      width: calc(100% / 3);
+      height: 409px;
+    }
+    .card:nth-child(4){
+      width: calc(100% / 3);
+      height: 409px;
+    }
+    .card:nth-child(5){
+      width: calc(100% / 3);
+      height: 409px;
+    }
+
+    .card-inner {
+      border: 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+      margin-left:15px;
+      margin-right:15px;
+      margin-bottom:30px;
+      background-color:#fff;
+    }
+  </style>
+  <template>
+    <div class="horizontal center-justified layout">
+      <div class="card-container horizontal layout wrap" >
+        <template is="x-repeat" items="{{showcases}}">
+          <div class="card layout vertical">
+            <div class="card-inner flex">
+              <span>{{item.title}}</span>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      properties: {
+        page: {
+          value: 'showcase'
+        }
+      },
+
+      ready: function() {
+        this.showcases = [
+          {
+            title: "Flipboard icon",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_1.png",
+            views: "240",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_3.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_5.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_6.png",
+            views: "130",
+            comments: "0"
+          }
+        ];
+
+      }
+
+    });
+
+  </script>
+</dom-module>
+
+
+<my-app></my-app>
+</body>
+</html>

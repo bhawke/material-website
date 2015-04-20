@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/layout/layout.html">
+  <link rel="import" href="../bower_components/layout/shadow-layout.html">
+
+  <style>
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+<dom-module id="my-app">
+  <style>
+    .card {
+      width: calc(100% / 4);
+      height: 300px;
+      background-color: blue;
+      color: #fff;
+    }
+    .card:nth-child(1){ width: calc(100% / 2); }
+    .card:nth-child(2){ width: calc(100% / 2); }
+    .card:nth-child(3){ width: calc(100% / 3); }
+    .card:nth-child(4){ width: calc(100% / 3); }
+    .card:nth-child(5){ width: calc(100% / 3); }
+  </style>
+  <template>
+    <div class="horizontal center-justified layout">
+      <div class="horizontal layout wrap" style="width:1200px;">
+        <div class="card"><span>Card 1</span></div>
+        <div class="card"><span>Card 2</span></div>
+        <div class="card"><span>Card 3</span></div>
+        <div class="card"><span>Card 4</span></div>
+        <div class="card"><span>Card 5</span></div>
+        <div class="card"><span>Card 6</span></div>
+        <div class="card"><span>Card 7</span></div>
+        <div class="card"><span>Card 8</span></div>
+        <div class="card"><span>Card 9</span></div>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      properties: {
+        page: {
+          value: 'showcase'
+        }
+      },
+
+      ready: function() {
+        this.showcases = [
+          {
+            idx:1,
+            title: "Flipboard icon",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_1.png",
+            views: "240",
+            comments: "0"
+          },
+          {
+            idx:2,
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            idx:3,
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_3.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            idx:4,
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            idx:5,
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_5.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            idx:6,
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_6.png",
+            views: "130",
+            comments: "0"
+          }
+        ];
+
+      }
+
+    });
+
+  </script>
+</dom-module>
+
+
+<my-app></my-app>
+</body>
+</html>

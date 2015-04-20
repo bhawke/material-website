@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/layout/layout.html">
+  <link rel="import" href="../bower_components/layout/shadow-layout.html">
+  <link rel="import" href="../bower_components/core-media-query/core-media-query.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/core-icons/core-icons.html">
+  <link rel="import" href="../bower_components/core-image/core-image.html">
+  <link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+  <link rel="import" href="./elements/card-blocks.html">
+
+  <style>
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #212121;
+      background-color: #edecec;
+    }
+  </style>
+</head>
+<body>
+
+<dom-module id="my-app">
+  <style>
+    .card-container {
+      width:100%;
+    }
+    .card {
+      width:100%;
+    }
+    .wide .card-container {
+      width:1160px;
+      margin-top:30px;
+    }
+    .wide .card {
+      width: calc(100% / 4);
+    }
+    .wide .card:nth-child(1){
+      width: calc(100% / 2);
+    }
+    .wide .card:nth-child(2){
+      width: calc(100% / 2);
+    }
+    .wide .card:nth-child(3){
+      width: calc(100% / 3);
+    }
+    .wide .card:nth-child(4){
+      width: calc(100% / 3);
+    }
+    .wide .card:nth-child(5){
+      width: calc(100% / 3);
+    }
+    paper-card {
+      margin-right: 8px;
+      margin-left: 8px;
+      margin-bottom: 30px;
+    }
+
+    .wide .card:nth-child(1) core-image {
+      height: 350px;
+    }
+    .wide .card:nth-child(2) core-image {
+      height: 350px;
+    }
+    .wide .card:nth-child(3) core-image {
+      height: 300px;
+    }
+    .wide .card:nth-child(4) core-image {
+      height: 300px;
+    }
+    .wide .card:nth-child(5) core-image {
+      height: 300px;
+    }
+  </style>
+  <template>
+
+    <core-media-query query="(min-width: 1200px)" on-query-matches-changed="wideChanged"></core-media-query>
+
+    <span>{{wide}}</span>
+    <div id="mydiv" class="horizontal center-justified layout">
+      <div class="card-container horizontal layout wrap">
+        <template is="x-repeat" items="{{showcases}}">
+          <div class="card layout vertical">
+            <paper-card elevation="1">
+              <media-block>
+                <core-image style="width:100%;min-height:200px;" sizing="cover" src="{{item.image}}"></core-image>
+              </media-block>
+              <primary-title>
+                <span class="title">{{item.title}}</span>
+                <span class="subtitle">Subtitle here</span>
+              </primary-title>
+              <action-block>
+                <paper-button>Action 1</paper-button>
+                <paper-button>Action 2</paper-button>
+                <div class="flex"></div>
+                <paper-icon-button icon="more-vert"></paper-icon-button>
+              </action-block>
+              <supporting-text style="padding-bottom:24px;">
+                I'm a thing.  But, like most politicians, he promised more than
+                he could deliver.  You won't have time for sleeping, soldier,
+                not with all the bed making you'll be doing. Then we'll go with that
+                data file! Hey, you add a one and two zeros to that or we walk!
+                You're going to do his laundry? I've got to find a way to escape.
+              </supporting-text>
+            </paper-card>
+          </div>
+        </template>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      properties: {
+        page: {
+          value: 'showcase'
+        },
+        wide: {
+          type:Boolean,
+          value: false
+        }
+      },
+
+      wideChanged: function(e) {
+        console.log('wide changed', e.detail.value);
+        if (e.detail.value)
+          this.$.mydiv.classList.add('wide');
+        else
+          this.$.mydiv.classList.remove('wide');
+      },
+      ready: function() {
+        this.wide = false;
+        this.showcases = [
+          {
+            title: "Flipboard icon",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_1.png",
+            views: "240",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_3.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_2.gif",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_5.png",
+            views: "130",
+            comments: "0"
+          },
+          {
+            title: "Flipboard Action Button",
+            category: "ILLUSTRATION",
+            author: "Matt Aussaguel",
+            image: "../data/showcase_6.png",
+            views: "130",
+            comments: "0"
+          }
+        ];
+
+      }
+
+    });
+
+  </script>
+</dom-module>
+
+
+<my-app></my-app>
+</body>
+</html>

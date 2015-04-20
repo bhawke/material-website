@@ -1,0 +1,111 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/layout/layout.html">
+<link rel="import" href="../../bower_components/layout/shadow-layout.html">
+<link rel="import" href="roboto.html">
+
+<dom-module id="supporting-text">
+  <style>
+    :host {
+      font-family: robotoregular, sans-serif;
+      font-size: 14px;
+      /*line-height: 24px;*/
+      line-height: 1.75;
+      display: block;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: #fff;
+      color: rgba(0, 0, 0, 0.67);
+    }
+  </style>
+  <template>
+    <div class="flex"><content></content></div>
+  </template>
+  <script>
+    Polymer({
+      is: 'supporting-text'
+    });
+  </script>
+</dom-module>
+
+<dom-module id="primary-title">
+  <style>
+    :host {
+      font-family: robotoregular, sans-serif;
+      display: block;
+      border: 0;
+      padding-top: 22px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 14px;
+      background-color: #fff;
+      color: rgba(0, 0, 0, 0.87);
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+  <template>
+    <div class="layout vertical">
+      <div class="title"><content select="[title], .title"></content></div>
+      <div class="subtitle"><content select="[subtitle], .subtitle"></content></div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'primary-title'
+    });
+  </script>
+</dom-module>
+
+<dom-module id="action-block">
+  <style>
+    :host {
+      display:block;
+      font-family: robotomedium, sans-serif;
+      font-size: 14px;
+      padding-top:8px;
+      padding-right:4px;
+      padding-left:4px;
+      padding-bottom:8px;
+      background-color: #fff;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  </style>
+  <template>
+    <div class="layout horizontal">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'action-block'
+    });
+  </script>
+</dom-module>
+
+<dom-module id="media-block">
+  <style>
+    :host {
+      display:block;
+      background-color: rgb(189, 189, 189);
+      min-height:200px;
+    }
+  </style>
+  <template>
+    <div class="layout horizontal">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'media-block'
+    });
+  </script>
+</dom-module>
